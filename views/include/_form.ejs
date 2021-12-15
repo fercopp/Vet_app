@@ -1,0 +1,59 @@
+            <!--Form handling Add Cita form-->
+            <form action="/api/citas" method="POST" id="add_cita">
+                <div class="new_cita">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Nombre cliente</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" value="" placeholder="Fernando">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreMascota" class="text-light">Nombre de la mascota</label>
+                        <input type="text" name="nombreMascota" value="" placeholder="Daisy">
+                    </div>
+                    <div class="form-group">
+                        <label for="raza" class="text-light">Raza/Especie</label>
+                        <input type="text" name="raza" value="" placeholder="Beagle">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad" class="text-light">Edad de la mascota</label>
+                        <input type="text" name="edad" value="" placeholder="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion" class="text-light">Dirección</label>
+                        <input type="text" name="direccion" value="" placeholder="Salvatierra, calle topiz #5">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" class="text-light">Numero de Teléfono</label>
+                        <input type="text" name="telefono" value="" placeholder="6622879865">
+                    </div>
+                    <div class="form-group">
+                        <label for="area" class="text-light">Area</label>
+                        <input type="text" name="area" value="Veterinaria">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha" class="text-light">Dia de la cita</label>
+                        <input type="date" name="fecha" value="2021-12-12" min="2021-12-12" max="2023-12-31">
+                        <label for="hora" class="text-light">Hora de la cita</label>
+                        <input type="time" name="hora" min="08:00" max="19:00">
+                    </div>             
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Email</label>
+                        <input type="text" name="email" value="" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio" class="text-light">Servicio Recolección</label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-2" name="servicio" value="Si">
+                            <label for="radio-2" class="radio-label">Si</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-3" name="servicio" value="No">
+                            <label for="radio-3" class="radio-label">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Guardar</button>
+                    </div>
+                </div>
+            </form>

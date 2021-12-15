@@ -1,0 +1,24 @@
+<% for(var i=0; i<citas.length; i++){ %> 
+
+<tr>
+    <td><%= i + 1%></td>
+    <td><%= citas[i].name %></td>
+    <td><%= citas[i].nombreMascota %></td>
+    <td><%= citas[i].raza %></td>
+    <td><%= citas[i].edad %></td>
+    <td><%= citas[i].direccion %></td>
+    <td><%= citas[i].telefono %></td>
+    <td><%= citas[i].fecha %></td>
+    <td><%= citas[i].hora %></td>
+    <td><%= citas[i].email %></td>
+    <td><%= citas[i].servicio %></td>
+    <td>
+        <a href="/update-cita?id=<%=citas[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete"  data-id=<%= citas[i]._id %>>
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr>
+<% } %> 

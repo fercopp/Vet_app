@@ -1,0 +1,87 @@
+<!--include Header-->
+<%- include('include/_header')%>
+<!--/include Header-->
+
+    <!--Agenda-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> Lista de citas</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Editar Cita</h2>
+                <span class="text-light">Usa el formulario de abajo para editar una cita</span>
+            </div>
+
+            <!--add cita form-->
+            <!--Form handling-->
+            <form method="POST" id="update_cita">
+                <div class="new_cita">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Nombre cliente</label>
+                        <input type="hidden" name="id" value="<%= cita._id %>">
+                        <input type="text" name="name" value="<%= cita.name %>" placeholder="Fernando">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreMascota" class="text-light">Nombre de la mascota</label>
+                        <input type="text" name="nombreMascota" value="<%= cita.nombreMascota %>" placeholder="Daisy">
+                    </div>
+                    <div class="form-group">
+                        <label for="raza" class="text-light">Raza/Especie</label>
+                        <input type="text" name="raza" value="<%= cita.raza %>" placeholder="Beagle">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad" class="text-light">Edad de la mascota</label>
+                        <input type="text" name="edad" value="<%= cita.edad %>" placeholder="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion" class="text-light">Dirección</label>
+                        <input type="text" name="direccion" value="<%= cita.direccion %>" placeholder="Salvatierra, calle topiz #5">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" class="text-light">Numero de Teléfono</label>
+                        <input type="text" name="telefono" value="<%= cita.telefono %>" placeholder="6622879865">
+                    </div>
+                    <div class="form-group">
+                        <label for="area" class="text-light">Area</label>
+                        <input type="text" name="area" value="Veterinaria">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha" class="text-light">Dia de la cita</label>
+                        <input type="date" name="fecha" value="<%= cita.fecha %>" min="2021-12-12" max="2023-12-31">
+                        <label for="hora" class="text-light">Hora de la cita</label>
+                        <input type="time" name="hora" value="<%= cita.hora %>" min="08:00" max="19:00">
+                    </div>             
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Email</label>
+                        <input type="text" name="email" value="<%= cita.email %>" placeholder="example@gmail.com">
+                    </div>
+                
+                    <!---->
+                    <div class="form-group">
+                        <label for="servicio" class="text-light">Servicio Recolección</label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-2" name="servicio" value="Si" <%= cita.servicio == 'Si'?'checked':''%>>
+                            <label for="radio-2" class="radio-label">Si</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-3" name="servicio" value="No" <%= cita.servicio == 'No'?'checked':''%>>
+                            <label for="radio-3" class="radio-label">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Guardar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </main>
+<!--/Agenda-->
+
+<!--include Footer-->
+<%- include('include/_footer')%>
+<!--/include Footer-->

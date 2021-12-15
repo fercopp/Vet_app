@@ -1,0 +1,45 @@
+
+<!--include Header-->
+<%- include('include/_header')%>
+<!--/include Header-->
+
+<!--Main Agenda-->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-cita" class="border shadow">
+                <span class="text-gradient">Nueva cita <i class="fas fa-calendar-alt"></i></span>
+            </a>
+        </div>
+        <!--Form handling-->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Cliente</th>
+                        <th>Nombre Mascota</th>
+                        <th>Raza/Especie</th>
+                        <th>Edad</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Dia</th>
+                        <th>Hora</th>
+                        <th>@Email</th>
+                        <th>Recolección de Mascota</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/_show')%>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
+<!--/Agenda-->
+
+
+<!--include Footer-->
+<%- include('include/_footer')%>
+<!--/include Footer-->

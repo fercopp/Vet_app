@@ -1,0 +1,39 @@
+            <!--Form handling Add Cita form-->
+            <form action="/api/pagos" method="POST" id="add_cita">
+                <div class="new_cita">
+                    <div class="form-group">
+                        <label for="IdTarjetaOrigen" class="text-light">Numero de la tarjeta origen</label>
+                        <input type="text" name="IdTarjetaOrigen" value="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="IdTarjetaDestino" class="text-light">Numero de la tarjeta destino</label>
+                        <input type="text" name="IdTarjetaDestino" value="" placeholder="">
+                    </div>
+                    <div class="form-group" style="display: inline-flex;">
+                        <div>
+                            <label for="cvv" class="text-light">Código de seguridad</label>
+                            <input type="text" name="cvv" value="" placeholder="xxx">
+                        </div>
+                        <div style="margin-left: 15%;">
+                            <label for="TipoTransaccion" class="text-light">Tipo Transacción</label>
+                            <input type="text" name="TipoTransaccion" value="3" placeholder="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Motivo" class="text-light">Motivo</label>
+                        <input type="text" name="Motivo" value="Servicio veterinario" placeholder="Servicio veterinario">
+                    </div>
+                    <div class="form-group" style="width: 25%; margin: auto;">
+                        <label for="Monto" class="text-light">Monto $</label>
+                        <input type="text" name="Monto" value="500" placeholder="500" style="text-align: center;">
+                    </div>
+                    <div class="form-group">
+                        <label for="Fecha" class="text-light">Fecha</label>
+                        <input type="date" name="Fecha" value="2021-12-13" min="2021-12-12" max="2023-12-31" >
+                    </div>            
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Solicitar transacción</button>
+                    </div>
+                </div>
+            </form>
