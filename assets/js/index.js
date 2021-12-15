@@ -17,7 +17,7 @@ $("#update_cita").submit(function(event){
     console.log(data);
 
     var request = {
-        "url" : `http://localhost:3000/api/citas/${data.id}`,
+        "url" : `https://sistema-vet-api.herokuapp.com/api/citas/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -33,7 +33,7 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:3000/api/citas/${id}`,
+            "url" : `https://sistema-vet-api.herokuapp.com/api/citas/${id}`,
             "method" : "DELETE",
         }
 
