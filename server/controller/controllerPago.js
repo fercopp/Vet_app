@@ -7,7 +7,7 @@ exports.create = (req,res)=>{
         res.status(400).send({message: "Content can not be empty!"});
         return;
     }
-    
+    //banco banda
     axios.post("https://deerbank.herokuapp.com/transfer/", {
         "destiny_account": "5138100775916044",
         "origin_account": "5188642424182287",
@@ -44,9 +44,11 @@ exports.create = (req,res)=>{
         Monto: req.body.Monto,
         Fecha: req.body.Fecha,
     })
-    .then(res => {
+    .then(data => {
+        res.status(200).send({
+            message: "Transacción Aceptada"
+        });
         console.log(`statusCode: ${res.status}`);
-        console.log(res);
     })
     .catch(error =>{
         console.error(error);
