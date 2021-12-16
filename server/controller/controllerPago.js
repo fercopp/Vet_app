@@ -1,5 +1,5 @@
 const axios = require('axios');
-var Consultadb = require('../model/model');
+var {Consultadb} = require('../model/model');
 
 // create y enviar solicitud de transaccion
 exports.create = (req,res)=>{
