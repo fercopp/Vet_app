@@ -39,7 +39,29 @@ var schema = new mongoose.Schema({
     servicio: String
 })
 
+var schemaConsulta = new mongoose.Schema({
+    EdoTransaccion:{
+        type: String
+    },
+    idTransaccion:{
+        type: String
+    },
+    cvv:{
+        type: String
+    },
+    Monto:{
+        type: String
+    },
+    Fecha:{
+        type: String
+    },
+    TipoTransaccion:{
+        type: String
+    },
+})
 
 const Agendadb = mongoose.model('agendadb', schema);
+const Consultadb = mongoose.model('consultadb', schema);
 
 module.exports = Agendadb;
+module.exports = Consultadb;

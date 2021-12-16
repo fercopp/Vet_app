@@ -21,7 +21,7 @@ exports.create = (req,res)=>{
     }
     })
     .then(data => {
-
+        console.log(data.data)
         res.status(200).send({
             message: "Transacción Aceptada"
         });
@@ -34,7 +34,7 @@ exports.create = (req,res)=>{
    
 
     //JSON solicitud transaccion
-    /*axios
+    /*axios banco irvin
     .post('http://api-bancoppel-transferencia.herokuapp.com/', {
         IdTarjetaOrigen: req.body.IdTarjetaOrigen,
         IdTarjetaDestino: req.body.IdTarjetaDestino,
