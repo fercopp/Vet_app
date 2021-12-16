@@ -1,4 +1,5 @@
 const axios = require('axios');
+var Consultadb = require('../model/model');
 
 // create y enviar solicitud de transaccion
 exports.create = (req,res)=>{
@@ -9,28 +10,50 @@ exports.create = (req,res)=>{
     }
     //banco banda
     axios.post("https://deerbank.herokuapp.com/transfer/", {
-        "destiny_account": "5138100775916044",
-        "origin_account": "5188642424182287",
-        "cvv": "256",
+        "destiny_account": req.body.destiny_account,
+        "origin_account": req.body.origin_account,
+        "cvv": req.body.cvv,
         "exp_date": "12/24",
-        "ammount": 100
+        "ammount": req.body.ammount
     },
     {
         headers: {
         Authorization: "Token 7c06d1ce8d6d8789d2f97d139b95b33751766246"
     }
     })
-    .then(data => {
-        console.log(data.data)
-        res.status(200).send({
-            message: "Transacción Aceptada"
-        });
 
-        console.log(`statusCode: ${res.status}`);
+    .then(data => {
+        
+
+        //guardar datos pago en consulta
+        const consulta = new Consultadb({
+            EdoTransaccion: data.data.status,
+            idTransaccion: data.data.transaction_num,
+            Monto: data.data.ammount,
+            Fecha: data.data.date
+        })
+
+        // save cita in the database
+        consulta
+            .save(consulta)
+            .then(data =>{
+
+                res.status(200).send({
+                    message: "Transacción Aceptada"
+                });
+            })
+            .catch(err =>{
+                res.status(500).send({
+                    message: err.messague || "Some error ocurred while creating a create operation"
+                });
+            });
+        
     })
     .catch(error =>{
         console.error(error);
     })
+
+
    
 
     //JSON solicitud transaccion
