@@ -61,7 +61,7 @@ var schemaConsulta = new mongoose.Schema({
 })
 
 const Agendadb = mongoose.model('agendadb', schema);
-const Consultadb = mongoose.model('consultadb', schema);
+const Consultadb = mongoose.model('consultadb', schemaConsulta);
 
 module.exports = Agendadb;
 module.exports = Consultadb;
