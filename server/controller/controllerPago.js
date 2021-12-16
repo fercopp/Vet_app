@@ -24,7 +24,6 @@ exports.create = (req,res)=>{
 
     .then(data => {
         
-
         //guardar datos pago en consulta
         const consulta = new Consultadb({
             EdoTransaccion: data.data.status,
@@ -44,12 +43,15 @@ exports.create = (req,res)=>{
             })
             .catch(err =>{
                 res.status(500).send({
-                    message: err.messague || "Some error ocurred while creating a create operation"
+                    message: err.message || "Some error ocurred while creating a create operationssss"
                 });
             });
         
     })
     .catch(error =>{
+        res.status(500).send({
+            message: error.message || "Some error ocurred while creating a create operation"
+        });
         console.error(error);
     })
 
