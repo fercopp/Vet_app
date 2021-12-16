@@ -32,7 +32,7 @@ exports.create = (req,res)=>{
             Fecha: data.data.date
         })
 
-        // save cita in the database
+        // save consulta in the database
         consulta
             .save(consulta)
             .then(data =>{

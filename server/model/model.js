@@ -33,8 +33,7 @@ var schema = new mongoose.Schema({
     hora: String,
     email: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     servicio: String
 })
