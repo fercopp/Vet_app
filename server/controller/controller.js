@@ -35,7 +35,7 @@ exports.create = (req,res)=>{
         })
         .catch(err =>{
             res.status(500).send({
-                message: err.messague || "Some error ocurred while creating a create operation"
+                message: err.message || "Some error ocurred while creating a create operation"
             });
         });
 
