@@ -70,13 +70,13 @@ exports.find = (req, res)=>{
         })
     }
 
-    Agendadb.find()
+    /*Agendadb.find()
     .then(cita =>{
         res.send(cita)
     })
     .catch(err=>{
         res.status(500).send({message: err.message || "Error ocurred while retrieving user information"})
-    })
+    })*/
 }
 
 
