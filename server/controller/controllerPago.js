@@ -64,7 +64,7 @@ exports.create = (req,res)=>{
     .post('https://api-bancoppel-transferencia.herokuapp.com/transacciones', {
         IdTarjetaOrigen: req.body.IdTarjetaOrigen,
         IdTarjetaDestino: req.body.IdTarjetaDestino,
-        cvv: req.body.cvv,
+        ccv: req.body.ccv,
         TipoTransaccion: req.body.TipoTransaccion,
         Motivo: req.body.Motivo,
         Monto: req.body.Monto,
