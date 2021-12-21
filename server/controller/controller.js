@@ -66,7 +66,7 @@ exports.find = (req, res)=>{
         Agendadb.find()
         .then(cita =>{
             //agregue esto
-            cita.collection("agendadbs").find({query},{_id: 0, name: 1})
+            Agendadb.collection("agendadbs").find({query},{_id: 0, name: 1})
             res.send(cita)
         })
         .catch(err=>{
