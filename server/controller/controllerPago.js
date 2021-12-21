@@ -61,7 +61,7 @@ exports.create = (req,res)=>{
 
     //JSON solicitud transaccion banco irvin BanCoppel
     axios 
-    .post('http://api-bancoppel-transferencia.herokuapp.com/', {
+    .post('https://api-bancoppel-transferencia.herokuapp.com/transacciones', {
         IdTarjetaOrigen: req.body.IdTarjetaOrigen,
         IdTarjetaDestino: req.body.IdTarjetaDestino,
         cvv: req.body.cvv,
