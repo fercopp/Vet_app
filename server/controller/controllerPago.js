@@ -74,12 +74,10 @@ exports.create = (req,res)=>{
 
         res.status(200).send({
             message: "Transacción Aceptada - BanCoppel"
-        })
-        .catch(err =>{
-            res.status(500).send({
-                message: err.message || "Some error ocurred while creating a create operationssss"
-            });
         });
+
+        console.log(`statusCode: ${res.status}`);
+
         /*
         const consulta = new Consultadb({
             EdoTransaccion: data.data.status,
