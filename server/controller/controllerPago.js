@@ -10,7 +10,7 @@ exports.create = (req,res)=>{
     }
     
     //banco banda
-    /*axios.post("https://deerbank.herokuapp.com/transfer/", {
+    axios.post("https://deerbank.herokuapp.com/transfer/", {
         "destiny_account": req.body.destiny_account,
         "origin_account": req.body.origin_account,
         "cvv": req.body.cvv,
@@ -54,11 +54,11 @@ exports.create = (req,res)=>{
             message: error.message || "Some error ocurred while creating a create operation"
         });
         console.error(error);
-    })*/
+    })
 
 
    
-
+    /*
     //JSON solicitud transaccion banco irvin BanCoppel
     axios 
     .post('https://api-bancoppel-transferencia.herokuapp.com/', {
@@ -78,13 +78,13 @@ exports.create = (req,res)=>{
 
         console.log(`statusCode: ${res.status}`);
 
-        /*
+        
         const consulta = new Consultadb({
             EdoTransaccion: data.data.status,
             idTransaccion: data.data.transaction_num,
             Monto: data.data.ammount,
             Fecha: data.data.date
-        })*/
+        })
 
         // save consulta in the database
         //consulta
@@ -101,5 +101,5 @@ exports.create = (req,res)=>{
         });
         console.error(error);
     })
-    
+    */
 }
