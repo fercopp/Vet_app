@@ -71,6 +71,15 @@ exports.create = (req,res)=>{
         Fecha: req.body.Fecha,
     })
     .then(data => {
+
+        res.status(200).send({
+            message: "Transacción Aceptada - BanCoppel"
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: err.message || "Some error ocurred while creating a create operationssss"
+            });
+        });
         /*
         const consulta = new Consultadb({
             EdoTransaccion: data.data.status,
@@ -80,19 +89,13 @@ exports.create = (req,res)=>{
         })*/
 
         // save consulta in the database
-        consulta
+        //consulta
             //.save(consulta)
-            .then(data =>{
+            //.then(data =>{
 
-                res.status(200).send({
-                    message: "Transacción Aceptada - BanCoppel"
-                });
-            })
-            .catch(err =>{
-                res.status(500).send({
-                    message: err.message || "Some error ocurred while creating a create operationssss"
-                });
-            });
+                
+            //})
+            
     })
     .catch(error =>{
         res.status(500).send({
