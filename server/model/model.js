@@ -38,6 +38,7 @@ var schema = new mongoose.Schema({
     servicio: String
 })
 
+
 var schemaConsulta = new mongoose.Schema({
     EdoTransaccion:{
         type: String
@@ -58,6 +59,7 @@ var schemaConsulta = new mongoose.Schema({
         type: String
     },
 })
+
 
 const Agendadb = mongoose.model('agendadb', schema);
 const Consultadb = mongoose.model('consultadb', schemaConsulta);

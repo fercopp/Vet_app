@@ -61,8 +61,12 @@ exports.find = (req, res)=>{
         })
 
     }else{
+        //agregue esto
+        var query = {servicio: "si"};
         Agendadb.find()
         .then(cita =>{
+            //agregue esto
+            cita.collection("agendadbs").find({query},{_id: 0, name: 1})
             res.send(cita)
         })
         .catch(err=>{
