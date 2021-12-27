@@ -23,14 +23,31 @@
                         <label for="Motivo" class="text-light">Motivo</label>
                         <input type="text" name="Motivo" value="Servicio veterinario" placeholder="Servicio veterinario">
                     </div>
-                    <div class="form-group" style="width: 25%; margin: auto;">
-                        <label for="Monto" class="text-light">Monto $</label>
-                        <input type="text" name="Monto" value="500" placeholder="500" style="text-align: center;">
-                    </div>
                     <div class="form-group">
                         <label for="Fecha" class="text-light">Fecha</label>
                         <input type="date" name="Fecha" value="2021-12-13" min="2021-12-12" max="2023-12-31" >
-                    </div>            
+                    
+                    <div class="form-group" id="servicestb">
+                        <input type="checkbox" value="400" id="serv1">
+                        <label class="text-light" for="serv1">Servicio 1 - $400</label>
+                        <br>
+                        <input type="checkbox" value="2000" id="serv2">
+                        <label class="text-light" for="serv2">Servicio 2 - $2000</label>
+                        <br>
+                        <input type="checkbox" value="1500" id="serv3">
+                        <label class="text-light" for="serv2">Servicio 3 - $1500</label>
+                    </div>
+                    <!--
+                    <div class="form-group" style="width: 25%; margin: auto;">
+                        <label for="Monto" class="text-light">Monto $</label>
+                        <input type="text" name="Monto" value="500" style="text-align: center;">
+                    -->
+                    <div class="form-group" style="width: 25%; margin: auto; ">
+                        <label for="Monto" class="text-light" style="font-size: 2.5em; margin-left: 22%">Monto</label>
+                        <div id="Monto" style="font-size: 2.5em; text-align: center;"></div>
+                    </div>
+
+
 
                     <div class="form-group">
                         <button type="submit" class="btn text-dark update">Solicitar transacción</button>

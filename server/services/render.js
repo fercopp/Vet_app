@@ -27,5 +27,21 @@ exports.update_cita = (req, res)=>{
 }
 
 exports.add_pago = (req,res)=>{
-    res.render('add_pago');
+    axios.get('https://sistema-vet-api.herokuapp.com/api/citas',{ params : { id:req.query.id}})
+    .then(function(citadata){
+        res.render("add_pago", { cita : citadata.data})
+    })
+    .catch(err=>{
+        res.send(err);
+    })
+}
+
+exports.add_receta = (req,res)=>{
+    axios.get('https://sistema-vet-api.herokuapp.com/api/citas',{ params : { id:req.query.id}})
+    .then(function(citadata){
+        res.render("add_receta", { cita : citadata.data})
+    })
+    .catch(err=>{
+        res.send(err);
+    })
 }

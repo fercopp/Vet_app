@@ -15,7 +15,7 @@ exports.create = (req,res)=>{
         "origin_account": req.body.origin_account,
         "cvv": req.body.cvv,
         "exp_date": "12/24",
-        "ammount": req.body.ammount
+        "ammount": req.body.ammount //cambiar a Monto
     },
     {
         headers: {

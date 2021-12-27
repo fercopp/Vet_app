@@ -1,0 +1,62 @@
+<!--include Header-->
+<%- include('include/_header')%>
+<!--/include Header-->
+
+    <!--Agenda-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> Lista de citas</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Nueva receta para </h2>
+            </div>
+
+            <!--add cita form-->
+            <!--Form handling-->
+            <form method="POST" id="add_cita">
+                <div class="new_cita">
+                    <div class="form-group">
+                        <label for="fechaReceta" class="text-light">Fecha</label>
+                        <input type="hidden" name="id" value="<%= cita._id %>">
+                        <input type="text" name="fechaReceta" value="<%= cita.fecha %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreMascota" class="text-light">Nombre de la mascota</label>
+                        <input type="text" name="nombreMascota" value="<%= cita.nombreMascota %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="raza" class="text-light">Raza/Especie</label>
+                        <input type="text" name="raza" value="<%= cita.raza %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad" class="text-light">Edad</label>
+                        <input type="text" name="edad" value="<%= cita.edad %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="peso" class="text-light">Peso (kg)</label>
+                        <input type="text" name="peso" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Nombre del dueño</label>
+                        <input type="text" name="name" value="<%= cita.name %>" readonly>
+                    </div>
+                    <label for="rp" class="text-light">Rp</label>
+                    <div class="form-group">
+                        <textarea rows="5" cols="105" name="rp" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Guardar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </main>
+<!--/Agenda-->
+
+<!--include Footer-->
+<%- include('include/_footer')%>
+<!--/include Footer-->

@@ -45,3 +45,18 @@ if(window.location.pathname == "/"){
         }
     })
 }
+
+var total = 300;
+function CalculateTotal(){
+    $("input:checkbox").each(function(){
+        if($(this).is(":checked")){
+            total += parseFloat($(this).val());
+        }
+    });
+    $("#Monto").html('$'+total);
+}
+
+$("input:checkbox").change(function(){
+    total = 300;
+    CalculateTotal();
+}).trigger("change");

@@ -60,9 +60,19 @@ var schemaConsulta = new mongoose.Schema({
     },
 })
 
+var schemaReceta = new mongoose.Schema({
+    peso:{
+        type: String
+    },
+    rp:{
+        type: String
+    }
+})
+
 
 const Agendadb = mongoose.model('agendadb', schema);
 const Consultadb = mongoose.model('consultadb', schemaConsulta);
+const Recetadb = mongoose.model('recetadb', schemaReceta);
 
-module.exports = {Agendadb, Consultadb}
+module.exports = {Agendadb, Consultadb, Recetadb}
 
