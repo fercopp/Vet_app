@@ -11,37 +11,22 @@
                 </div>
             </div>
             <div class="form-title text-center">
-                <h2 class="text-dark">Nueva receta para </h2>
+                <h2 class="text-dark">Nueva receta para <%= cita.nombreMascota %> </h2>
+                
             </div>
-
+            
             <!--add cita form-->
             <!--Form handling-->
             <form method="POST" id="add_cita">
                 <div class="new_cita">
-                    <div class="form-group">
-                        <label for="fechaReceta" class="text-light">Fecha</label>
-                        <input type="hidden" name="id" value="<%= cita._id %>">
-                        <input type="text" name="fechaReceta" value="<%= cita.fecha %>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombreMascota" class="text-light">Nombre de la mascota</label>
-                        <input type="text" name="nombreMascota" value="<%= cita.nombreMascota %>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="raza" class="text-light">Raza/Especie</label>
-                        <input type="text" name="raza" value="<%= cita.raza %>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="edad" class="text-light">Edad</label>
-                        <input type="text" name="edad" value="<%= cita.edad %>" readonly>
-                    </div>
+                    <h5 class="text-light">Fecha: <span style="color: #2b2d42;"><%= cita.fecha %></span></h5><br>
+                    <h5 class="text-light">Raza/Especie: <span style="color: #2b2d42;"><%= cita.raza %></span></h5><br>
+                    <h5 class="text-light">Edad: <span style="color: #2b2d42;"><%= cita.edad %></span></h5><br>
+                    <h5 class="text-light">Nombre del dueño: <span style="color: #2b2d42;"><%= cita.name %></span></h5><br>
+
                     <div class="form-group">
                         <label for="peso" class="text-light">Peso (kg)</label>
                         <input type="text" name="peso" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="text-light">Nombre del dueño</label>
-                        <input type="text" name="name" value="<%= cita.name %>" readonly>
                     </div>
                     <label for="rp" class="text-light">Rp</label>
                     <div class="form-group">

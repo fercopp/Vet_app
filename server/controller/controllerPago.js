@@ -1,3 +1,7 @@
+
+// CommonJS
+const Swal = require('sweetalert2')
+
 const axios = require('axios');
 var {Consultadb} = require('../model/model');
 
@@ -11,11 +15,11 @@ exports.create = (req,res)=>{
     
     //banco banda
     axios.post("https://deerbank.herokuapp.com/transfer/", {
-        "destiny_account": req.body.destiny_account,
-        "origin_account": req.body.origin_account,
+        "destiny_account": req.body.IdTarjetaDestino,
+        "origin_account": req.body.IdTarjetaOrigen,
         "cvv": req.body.cvv,
         "exp_date": "12/24",
-        "ammount": req.body.ammount //cambiar a Monto
+        "ammount": req.body.Monto //cambiar a Monto
     },
     {
         headers: {
@@ -41,6 +45,11 @@ exports.create = (req,res)=>{
                 res.status(200).send({
                     message: "Transacción Aceptada - DeerBank"
                 });
+                Swal.fire(
+                    'Transacción Aceptada',
+                    'DeerBank',
+                    'success'
+                )
             })
             .catch(err =>{
                 res.status(500).send({
@@ -65,7 +74,7 @@ exports.create = (req,res)=>{
         IdTarjetaOrigen: req.body.IdTarjetaOrigen,
         IdTarjetaDestino: req.body.IdTarjetaDestino,
         ccv: req.body.ccv,
-        TipoTransaccion: req.body.TipoTransaccion,
+        TipoTransaccion: "3",
         Motivo: req.body.Motivo,
         Monto: req.body.Monto,
         Fecha: req.body.Fecha,
