@@ -61,8 +61,9 @@ $("input:checkbox").change(function(){
     CalculateTotal();
 }).trigger("change");
 
-function getSelectValue(){
+function getSelectValue(selectedValue){
     var selectedValue = document.getElementById("bancos").value;
+    return selectedValue;
 }
 
 $("#add_cita").submit(function(event){
@@ -75,7 +76,8 @@ $("#add_cita").submit(function(event){
 })*/
 
 $("#add_pago").submit(function(event){
-    if(selectedValue == 'deerbank'){
+    
+    if(getSelectValue(selectedValue) == 'deerbank'){
         event.preventDefault();
 
         var unindexed_array = $(this).serializeArray();
@@ -93,29 +95,8 @@ $("#add_pago").submit(function(event){
             "data" : data
         }
     
-        $.ajax(request).done(function(response){
-            alert("Transacción con éxito - deerbank");
-        })
-    }else{
-        event.preventDefault();
-
-        var unindexed_array = $(this).serializeArray();
-        var data = {}
-        
-        $.map(unindexed_array,function(n,i){
-            data[n['name']] = n['value']
-        })
-    
-        //console.log(data)
-        
-        var request = {
-            "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
-            "method" : "POST",
-            "data" : data
-        }
-    
-        $.ajax(request).done(function(response){
-            alert("Transacción con éxito - bancoppel");
+        $.ajax(request).done(function(selectedValue){
+            alert(`Transacción con éxito - ${getSelectValue(selectedValue)}`);
         })
     }
     
