@@ -1,6 +1,6 @@
 
 // CommonJS
-//const Swal = require('sweetalert2')
+const Swal = require('sweetalert2')
 
 const axios = require('axios');
 var {Consultadb} = require('../model/model');
@@ -46,11 +46,11 @@ exports.create = (req,res)=>{
                     res.status(200).send({
                         message: "Transacción Aceptada - DeerBank"
                     });
-                    /*Swal.fire(
+                    Swal.fire(
                         'Transacción Aceptada',
                         'DeerBank',
                         'success'
-                    )*/
+                    )
                 })
                 .catch(err =>{
                     res.status(500).send({

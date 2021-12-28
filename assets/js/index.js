@@ -64,5 +64,4 @@ $("input:checkbox").change(function(){
 
 function getSelectValue(){
     var selectedValue = document.getElementById("bancos").value;
-    console.log(selectedValue);
 }
