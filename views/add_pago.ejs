@@ -14,15 +14,6 @@
             <h2 class="text-dark">Agregar Tarjeta</h2>
             <span class="text-light">Usa el formulario de abajo para agergar método de pago</span>
         </div>
-        <div id="bancosDropDown">
-            <label class="text-light" for="bancos">Elige un banco:</label>
-
-            <select name="bancos" id="bancos" onchange="getSelectValue();">
-                <option value="deerbank">DeerBank</option>
-                <option value="bancoppel">BanCoppel</option>
-            </select>
-            <input id="banco" type="hidden" name="bancoSeleccionado" value="">
-        </div>
 
         <!--add cita form-->
         <%- include('include/_formPago')%>
@@ -30,12 +21,7 @@
     </div>
 </main>
 <!--/Pago-->
-<script>
-    function getSelectValue(){
-        var selectedValue = document.getElementById("bancos").value;
-        console.log(selectedValue);
-    }
-</script>
+
 <!--include Footer-->
 <%- include('include/_footer')%>
 <!--/include Footer-->
