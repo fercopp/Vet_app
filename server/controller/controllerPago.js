@@ -41,9 +41,7 @@ exports.create = (req,res)=>{
                     res.status(200).send({
                         message: "Transacción Aceptada - DeerBank"
                     });
-                    res.redirect('/add-pago')
                     
-
                 })
                 .catch(err =>{
                     res.status(500).send({
