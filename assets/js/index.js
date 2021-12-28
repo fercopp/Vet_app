@@ -99,6 +99,8 @@ $("#add_pago").submit(function(event){
         $.ajax(request).done(function(selectedValue){
             alert(`Transacción con éxito - ${selectedValue}`);
         })
+    }else{
+        console.log("error")
     }
     
 })
