@@ -17,7 +17,7 @@ exports.create = (req,res)=>{
         }
         //banco banda
         axios.post("https://deerbank.herokuapp.com/transfer/", {
-            "destiny_account": "5138100775916044",
+            "destiny_account": "5527895529754521",
             "origin_account": req.body.IdTarjetaOrigen,
             "cvv": req.body.cvv,
             "exp_date": "12/24",
@@ -25,7 +25,7 @@ exports.create = (req,res)=>{
         },
         {
             headers: {
-            Authorization: "Token 7c06d1ce8d6d8789d2f97d139b95b33751766246"
+            Authorization: "Token 6e9faf38892e195693cffa5aef173d7d3cc9aa08"
         }
         })
 
