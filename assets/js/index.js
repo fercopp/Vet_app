@@ -53,7 +53,7 @@ function CalculateTotal(){
             total += parseFloat($(this).val());
         }
     });
-    $("#Monto").html('$'+total);
+    $("#costo").html('$'+total);
 }
 
 $("input:checkbox").change(function(){
