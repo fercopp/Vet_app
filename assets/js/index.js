@@ -1,5 +1,4 @@
 
-
 $("#add_cita").submit(function(event){
     alert("Los datos fueron guardados con éxito")
 })
@@ -72,4 +71,5 @@ $("#add_cita").submit(function(event){
 
 $("#add_pago").submit(function(event){
     alert("Transacción solicitada")
+    
 })

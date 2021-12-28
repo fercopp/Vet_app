@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 var {Consultadb} = require('../model/model');
 
@@ -47,7 +46,7 @@ exports.create = (req,res)=>{
                 })
                 .catch(err =>{
                     res.status(500).send({
-                        message: err.message || "Some error ocurred while creating a create operationssss"
+                        message: err.message || "Some error ocurred while creating a create operationss"
                     });
                 });
             
