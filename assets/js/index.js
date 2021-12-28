@@ -83,8 +83,6 @@ $("#add_pago").submit(function(event){
     $.map(unindexed_array,function(n,i){
         data[n['name']] = n['value']
     })
-
-    //console.log(data)
     
     var request = {
         "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,

@@ -38,6 +38,7 @@ exports.create = (req,res)=>{
             consulta
                 .save(consulta)
                 .then(data =>{
+                    console.log("hola")
                     res.status(200).send({
                         message: "Transacción Aceptada - DeerBank"
                     });
