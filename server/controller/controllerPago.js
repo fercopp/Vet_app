@@ -12,12 +12,10 @@ exports.create = (req,res)=>{
         res.status(400).send({message: "Content can not be empty!"});
         return;
     }
-    console.log(req.body.Monto);
-    //
     
     //banco banda
     axios.post("https://deerbank.herokuapp.com/transfer/", {
-        "destiny_account": req.body.IdTarjetaDestino,
+        "destiny_account": "5138100775916044",
         "origin_account": req.body.IdTarjetaOrigen,
         "cvv": req.body.cvv,
         "exp_date": "12/24",
