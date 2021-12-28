@@ -156,12 +156,15 @@ table{
 }
 
 #update_cita .form-group,
-#add_cita .form-group{
+#add_cita .form-group,
+#add_pago .form-group{
     margin: .4em 0;
 }
 
+
 #update_cita .form-group input[type="text"],
-#add_cita .form-group input[type="text"]{
+#add_cita .form-group input[type="text"],
+#add_pago .form-group input[type="text"]{
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -172,7 +175,8 @@ table{
 }
 
 #update_cita .form-group .radio,
-#add_cita .form-group .radio{
+#add_cita .form-group .radio,
+#add_pago .form-group .radio{
     margin: 1em 2em;
 }
 
@@ -217,7 +221,9 @@ table{
 }
 
 #update_cita .form-group .btn,
-#add_cita .form-group .btn{
+#add_cita .form-group .btn,
+#add_pago .form-group .btn
+{
     width: 100%;
     padding: .9em 1em;
     background-color: #16db93;
@@ -231,7 +237,8 @@ table{
 }
 
 #update_cita .form-group .btn:hover,
-#add_cita .form-group .btn:hover{
+#add_cita .form-group .btn:hover,
+#add_pago .form-group .btn:hover{
     background-color: var(--dark);
     color: var(--border);
 }

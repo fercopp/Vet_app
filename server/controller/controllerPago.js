@@ -4,6 +4,7 @@ var {Consultadb} = require('../model/model');
 
 // create y enviar solicitud de transaccion
 exports.create = (req,res)=>{
+    console.log(req.body);
     if(req.body.bancos == 'deerbank'){
         // validate request
         if(!req.body){
@@ -39,11 +40,10 @@ exports.create = (req,res)=>{
                 .save(consulta)
                 .then(data =>{
 
-                    Swal.fire(
-                        'Transacción Aceptada',
-                        'DeerBank',
-                        'success'
-                    )
+                    res.status(200).send({
+                        message: "Transacción Aceptada - DeerBank"
+                    });
+
                 })
                 .catch(err =>{
                     res.status(500).send({
