@@ -17,7 +17,7 @@
         <div id="bancosDropDown">
             <label class="text-light" for="bancos">Elige un banco:</label>
 
-            <select name="bancos" id="bancos" onchange="getSelectValue();">
+            <select name="bancos" id="bancos">
                 <option value="deerbank">DeerBank</option>
                 <option value="bancoppel">BanCoppel</option>
             </select>
@@ -29,12 +29,7 @@
     </div>
 </main>
 <!--/Pago-->
-<script>
-function getSelectValue(){
-    var selectedValue = document.getElementById("bancos").value;
-    
-}
-</script>
+
 <!--include Footer-->
 <%- include('include/_footer')%>
 <!--/include Footer-->
