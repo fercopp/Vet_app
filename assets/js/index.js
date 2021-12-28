@@ -93,7 +93,7 @@ $("#add_pago").submit(function(event){
         "data" : data
     }
 
-    $.ajax(request).done(function(response){
+    $.ajax(request).done(function(selectedValue){
         alert(`Transaccion con éxito - ${selectedValue}`);
     })
  
