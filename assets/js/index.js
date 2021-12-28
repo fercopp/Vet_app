@@ -69,7 +69,22 @@ $("#add_cita").submit(function(event){
     alert("Los datos fueron guardados con éxito")
 })
 
-$("#add_pago").submit(function(event){
+/*$("#add_pago").submit(function(event){
     alert("Transacción solicitada")
     
+})*/
+
+$("#add_pago").submit(function(event){
+
+    var data = {}
+
+    var request = {
+        "url" : `https://sistema-vet-api.herokuapp.com/api/pagos/${data.id}`,
+        "method" : "POST",
+        "data" : data
+    }
+
+    $.ajax(request).done(function(response){
+        alert("Transacción con éxito - deerbank");
+    })
 })

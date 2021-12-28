@@ -39,9 +39,9 @@ exports.create = (req,res)=>{
                 .save(consulta)
                 .then(data =>{
 
-                    res.status(200).send({
+                    /*res.status(200).send({
                         message: "Transacción Aceptada - DeerBank"
-                    });
+                    });*/
 
                 })
                 .catch(err =>{
