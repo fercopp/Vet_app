@@ -75,26 +75,48 @@ $("#add_cita").submit(function(event){
 })*/
 
 $("#add_pago").submit(function(event){
+    if(selectedValue == 'deerbank'){
+        event.preventDefault();
 
-    event.preventDefault();
-
-    var unindexed_array = $(this).serializeArray();
-    var data = {}
+        var unindexed_array = $(this).serializeArray();
+        var data = {}
+        
+        $.map(unindexed_array,function(n,i){
+            data[n['name']] = n['value']
+        })
     
-    $.map(unindexed_array,function(n,i){
-        data[n['name']] = n['value']
-    })
-
-    //console.log(data)
+        //console.log(data)
+        
+        var request = {
+            "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
+            "method" : "POST",
+            "data" : data
+        }
     
-    var request = {
-        "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
-        "method" : "POST",
-        "data" : data
+        $.ajax(request).done(function(response){
+            alert("Transacción con éxito - deerbank");
+        })
+    }else{
+        event.preventDefault();
+
+        var unindexed_array = $(this).serializeArray();
+        var data = {}
+        
+        $.map(unindexed_array,function(n,i){
+            data[n['name']] = n['value']
+        })
+    
+        //console.log(data)
+        
+        var request = {
+            "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
+            "method" : "POST",
+            "data" : data
+        }
+    
+        $.ajax(request).done(function(response){
+            alert("Transacción con éxito - bancoppel");
+        })
     }
-
-    $.ajax(request).done(function(selectedValue){
-        alert(`Transaccion con éxito - ${selectedValue}`);
-    })
- 
+    
 })

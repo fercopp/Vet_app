@@ -59,6 +59,7 @@ exports.create = (req,res)=>{
             console.log(error.response.data);
         })
     }else{
+        console.log("bancoppel")
         /*
         //JSON solicitud transaccion banco irvin BanCoppel
         axios 
