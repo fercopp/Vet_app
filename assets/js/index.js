@@ -87,7 +87,7 @@ $("#add_pago").submit(function(event){
     console.log(data)
     
     var request = {
-        "url" : `https://sistema-vet-api.herokuapp.com/api/pagos/${data.id}`,
+        "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
         "method" : "POST",
         "data" : data
     }
