@@ -75,6 +75,7 @@ $("#add_cita").submit(function(event){
 })*/
 
 $("#add_pago").submit(function(event){
+
     event.preventDefault();
 
     var unindexed_array = $(this).serializeArray();
@@ -84,7 +85,7 @@ $("#add_pago").submit(function(event){
         data[n['name']] = n['value']
     })
 
-    console.log(data)
+    //console.log(data)
     
     var request = {
         "url" : `https://sistema-vet-api.herokuapp.com/api/pagos`,
@@ -93,6 +94,7 @@ $("#add_pago").submit(function(event){
     }
 
     $.ajax(request).done(function(response){
-        alert("Transacción con éxito - deerbank");
+        alert(`Transaccion con éxito - ${selectedValue}`);
     })
+ 
 })
