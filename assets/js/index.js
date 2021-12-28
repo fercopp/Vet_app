@@ -61,9 +61,10 @@ $("input:checkbox").change(function(){
     CalculateTotal();
 }).trigger("change");
 
-function getSelectValue(selectedValue){
-    var selectedValue = document.getElementById("bancos").value;
-    return selectedValue;
+var selectedValue = {};
+
+function getSelectValue(){
+    selectedValue = document.getElementById("bancos").value;
 }
 
 $("#add_cita").submit(function(event){
@@ -77,7 +78,7 @@ $("#add_cita").submit(function(event){
 
 $("#add_pago").submit(function(event){
     
-    if(getSelectValue(selectedValue) == 'deerbank'){
+    if(selectedValue == 'deerbank'){
         event.preventDefault();
 
         var unindexed_array = $(this).serializeArray();
@@ -96,7 +97,7 @@ $("#add_pago").submit(function(event){
         }
     
         $.ajax(request).done(function(selectedValue){
-            alert(`Transacción con éxito - ${getSelectValue(selectedValue)}`);
+            alert(`Transacción con éxito - ${selectedValue}`);
         })
     }
     
