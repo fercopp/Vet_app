@@ -1,6 +1,6 @@
 
 // CommonJS
-const Swal = require('sweetalert2')
+//const Swal = require('sweetalert2')
 
 const axios = require('axios');
 var {Consultadb} = require('../model/model');
@@ -19,7 +19,7 @@ exports.create = (req,res)=>{
         "origin_account": req.body.IdTarjetaOrigen,
         "cvv": req.body.cvv,
         "exp_date": "12/24",
-        "ammount": req.body.Monto //cambiar a Monto
+        "ammount": "500" //cambiar a Monto
     },
     {
         headers: {
@@ -45,11 +45,11 @@ exports.create = (req,res)=>{
                 res.status(200).send({
                     message: "Transacción Aceptada - DeerBank"
                 });
-                Swal.fire(
+                /*Swal.fire(
                     'Transacción Aceptada',
                     'DeerBank',
                     'success'
-                )
+                )*/
             })
             .catch(err =>{
                 res.status(500).send({
@@ -63,6 +63,7 @@ exports.create = (req,res)=>{
             message: error.message || "Some error ocurred while creating a create operation"
         });
         console.error(error);
+        console.log(error.response.data);
     })
 
 
