@@ -42,7 +42,7 @@ route.get('/api/citas',controller.find);
 route.put('/api/citas/:id',controller.update);
 route.delete('/api/citas/:id',controller.delete);
 
-route.post('/add-pago',controllerPago.create);
+route.post('/api/pagos',controllerPago.create);
 
 route.post('/add-receta',controllerReceta.create);
 
