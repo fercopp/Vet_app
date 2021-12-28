@@ -21,6 +21,7 @@
                 <option value="deerbank">DeerBank</option>
                 <option value="bancoppel">BanCoppel</option>
             </select>
+            <input id="banco" type="hidden" name="bancoSeleccionado" value="">
         </div>
 
         <!--add cita form-->
@@ -33,6 +34,7 @@
     function getSelectValue(){
         var selectedValue = document.getElementById("bancos").value;
         console.log(selectedValue);
+        document.getElementById("banco").value = selectedValue;
     }
 </script>
 <!--include Footer-->

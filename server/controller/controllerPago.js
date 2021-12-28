@@ -8,8 +8,7 @@ var {Consultadb} = require('../model/model');
 // create y enviar solicitud de transaccion
 exports.create = (req,res)=>{
     
-
-    if(req.body.selectedValue == 'deerbank'){
+    if(req.body.bancoSeleccionado == 'deerbank'){
         // validate request
         if(!req.body){
             res.status(400).send({message: "Content can not be empty!"});
