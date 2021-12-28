@@ -61,3 +61,8 @@ $("input:checkbox").change(function(){
     total = 300;
     CalculateTotal();
 }).trigger("change");
+
+function getSelectValue(){
+    var selectedValue = document.getElementById("bancos").value;
+    
+}
