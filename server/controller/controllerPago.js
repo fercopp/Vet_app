@@ -43,9 +43,6 @@ exports.create = (req,res)=>{
                 .save(consulta)
                 .then(data =>{
 
-                    res.status(200).send({
-                        message: "Transacción Aceptada - DeerBank"
-                    });
                     Swal.fire(
                         'Transacción Aceptada',
                         'DeerBank',
