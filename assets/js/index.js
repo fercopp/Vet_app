@@ -54,7 +54,7 @@ function CalculateTotal(){
         }
     });
     $("#costo").html('$'+total);
-    document.getElementById("Monto").value = total;
+    document.getElementById("Monto").value = String(total);
 }
 
 $("input:checkbox").change(function(){
