@@ -1,13 +1,10 @@
 
-// CommonJS
-const Swal = require('sweetalert2')
 
 const axios = require('axios');
 var {Consultadb} = require('../model/model');
 
 // create y enviar solicitud de transaccion
 exports.create = (req,res)=>{
-    console.log(req.body);
     if(req.body.bancos == 'deerbank'){
         // validate request
         if(!req.body){
