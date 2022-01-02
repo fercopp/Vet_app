@@ -38,11 +38,11 @@ exports.create = (req,res)=>{
             consulta
                 .save(consulta)
                 .then(data =>{
-
                     res.status(200).send({
                         message: "Transacción Aceptada - DeerBank"
                     });
-                    res.redirect("/");
+                    //res.redirect("/");
+                    
                     
                 })
                 .catch(err =>{
@@ -66,10 +66,10 @@ exports.create = (req,res)=>{
         axios 
         .post('https://api-bancoppel-transferencia.herokuapp.com/', {
             IdTarjetaOrigen: req.body.IdTarjetaOrigen,
-            IdTarjetaDestino: req.body.IdTarjetaDestino,
-            ccv: req.body.ccv,
+            IdTarjetaDestino: "5527895529754521",
+            ccv: req.body.cvv,
             TipoTransaccion: "3",
-            Motivo: req.body.Motivo,
+            Motivo: "Motivoo",
             Monto: req.body.Monto,
             Fecha: req.body.Fecha,
         })
@@ -90,12 +90,12 @@ exports.create = (req,res)=>{
             })
 
             // save consulta in the database
-            //consulta
-                //.save(consulta)
-                //.then(data =>{
+            consulta
+                .save(consulta)
+                .then(data =>{
 
                     
-                //})
+                })
                 
         })
         .catch(error =>{

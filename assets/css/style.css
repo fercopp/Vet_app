@@ -88,6 +88,16 @@ a{
     margin:2em 0;
 }
 
+#invoice{
+    margin-top: 6em;
+    font-family: 'Barlow', sans-serif;
+}
+
+#invoice .container .box-nav >a{
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
 table{
     border-spacing: 0px;
     width: 100%;

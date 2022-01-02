@@ -45,3 +45,13 @@ exports.add_receta = (req,res)=>{
         res.send(err);
     })
 }
+
+exports.ver_receta = (req,res)=>{
+    axios.get('https://sistema-vet-api.herokuapp.com/api/citas',{ params : { id:req.query.id}})
+    .then(function(citadata){
+        res.render("ver_receta", { cita : citadata.data})
+    })
+    .catch(err=>{
+        res.send(err);
+    })
+}

@@ -5,11 +5,6 @@
     <!--Receta-->
     <main id="site-main">
         <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <div class="filter">
-                    <a href="/"><i class="fas fa-angle-double-left"></i> Lista de citas</a>
-                </div>
-            </div>
             <div class="form-title text-center">
                 <h2 class="text-dark">Nueva receta para <%= cita.nombreMascota %> </h2>
                 
@@ -17,24 +12,16 @@
             
             <!--add cita form-->
             <!--Form handling-->
-            <form method="POST" id="add_cita">
+            <form id="add_cita">
                 <div class="new_cita">
                     <h5 class="text-light">Fecha: <span style="color: #2b2d42;"><%= cita.fecha %></span></h5><br>
                     <h5 class="text-light">Raza/Especie: <span style="color: #2b2d42;"><%= cita.raza %></span></h5><br>
                     <h5 class="text-light">Edad: <span style="color: #2b2d42;"><%= cita.edad %></span></h5><br>
                     <h5 class="text-light">Nombre del dueño: <span style="color: #2b2d42;"><%= cita.name %></span></h5><br>
+                    <h5 class="text-light">Peso: <span style="color: #2b2d42;"></span></h5><br>
+                    <h5 class="text-light">Receta <span style="color: #2b2d42;"></span></h5><br>
 
-                    <div class="form-group">
-                        <label for="peso" class="text-light">Peso (kg)</label>
-                        <input type="text" name="peso" value="">
-                    </div>
-                    <label for="rp" class="text-light">Rp</label>
-                    <div class="form-group">
-                        <textarea rows="5" cols="105" name="rp" ></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn text-dark update">Guardar</button>
-                    </div>
+                    
                 </div>
             </form>
         </div>

@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-var {Agendadb} = require('../model/model');
+var {Agendadb, Agenda_db, Mascotadb, Clientedb} = require('../model/model');
 
 
 // create and save new cita
@@ -26,6 +26,8 @@ exports.create = (req,res)=>{
         servicio: req.body.servicio
     })
 
+    
+
     // save cita in the database
     cita
         .save(cita)
@@ -39,6 +41,113 @@ exports.create = (req,res)=>{
             });
         });
 
+
+
+    //new cliente
+    const cliente = new Clientedb({
+        name: req.body.name,
+        direccion: req.body.direccion,
+        telefono: req.body.telefono,
+        email: req.body.email
+    })
+
+    //new mascota
+    const mascota = new Mascotadb({
+        nombreMascota: req.body.nombreMascota,
+        raza: req.body.raza,
+        edad: req.body.edad
+    })
+
+    //new citaa
+    const citaa = new Agenda_db({
+        area: req.body.area,
+        fecha: req.body.fecha,
+        hora: req.body.hora,
+        servicio: req.body.servicio
+    })
+
+    // save cita in the database
+    cliente
+        .save(cliente)
+        .then(data =>{
+            //res.send(data)
+            //res.redirect('/add-cita')
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: err.message || "Some error ocurred while creating a create operation"
+            });
+        });
+
+    mascota
+        .save(mascota)
+        .then(data =>{
+            //res.send(data)
+            //res.redirect('/add-cita')
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: err.message || "Some error ocurred while creating a create operation"
+            });
+        });
+    
+    citaa
+        .save(citaa)
+        .then(data =>{
+            //res.send(data)
+            //res.redirect('/add-cita')
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: err.message || "Some error ocurred while creating a create operation"
+            });
+        });
+
+    /*
+    //Conexion con Transporte Post
+    axios.post("", {
+        "destiny_account": "5527895529754521",
+        "origin_account": req.body.IdTarjetaOrigen,
+        "cvv": req.body.cvv,
+        "exp_date": "12/24",
+        "ammount": req.body.Monto 
+    })
+
+    .then(data => {
+        
+        //guardar datos pago en consulta
+        const consulta = new Consultadb({
+            EdoTransaccion: data.data.status,
+            idTransaccion: data.data.transaction_num,
+            Monto: data.data.ammount,
+            Fecha: data.data.date
+        })
+
+        // save consulta in the database
+        consulta
+            .save(consulta)
+            .then(data =>{
+                res.status(200).send({
+                    message: "Transacción Aceptada - DeerBank"
+                });
+                //res.redirect("/");
+                
+                
+            })
+            .catch(err =>{
+                res.status(500).send({
+                    message: err.message || "Some error ocurred while creating a create operationss"
+                });
+            });
+        
+    })
+    .catch(error =>{
+        res.status(500).send({
+            message: error.message || "Some error ocurred while creating a create operation"
+        });
+        console.error(error);
+        console.log(error.response.data);
+    })*/
         
 }
 

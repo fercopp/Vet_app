@@ -36,6 +36,8 @@ route.get('/add-pago', services.add_pago)
  */
 route.get('/add-receta', services.add_receta)
 
+route.get('/ver_receta', services.ver_receta)
+
 // API
 route.post('/api/citas',controller.create);
 route.get('/api/citas',controller.find);
