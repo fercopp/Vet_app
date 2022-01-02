@@ -31,7 +31,8 @@ exports.create = (req,res)=>{
                 EdoTransaccion: data.data.status,
                 idTransaccion: data.data.transaction_num,
                 Monto: data.data.ammount,
-                Fecha: data.data.date
+                Fecha: data.data.date,
+                terminacionTj: req.body.IdTarjetaOrigen.slice(-4)
             })
 
             // save consulta in the database

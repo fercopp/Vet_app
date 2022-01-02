@@ -58,6 +58,9 @@ var schemaConsulta = new mongoose.Schema({
     TipoTransaccion:{
         type: String
     },
+    terminacionTj:{
+        type: String
+    }
 })
 
 var schemaReceta = new mongoose.Schema({
