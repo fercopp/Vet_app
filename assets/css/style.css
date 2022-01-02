@@ -12,9 +12,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    /*background-image: url("../img/bg1.jpg");*/
-}
 
 a{
     text-decoration: none;
@@ -43,6 +40,9 @@ a{
 .text-center{
     text-align: center;
 }
+.text-left{
+    text-align: left;
+}
 
 .border-shadow{
     border: 1px solid var(--border-btn);
@@ -69,7 +69,7 @@ a{
 }
 
 #header nav{
-    background-color: #06d6a0;
+    background-color: #2b2d42;
     padding: 1em 0;
     width: 100%;
 }
