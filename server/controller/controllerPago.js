@@ -69,7 +69,7 @@ exports.create = (req,res)=>{
             IdTarjetaDestino: "5527895529754521",
             ccv: req.body.cvv,
             TipoTransaccion: "3",
-            Motivo: "Motivoo",
+            Motivo: "Servicio Veterinario",
             Monto: req.body.Monto,
             Fecha: req.body.Fecha,
         })

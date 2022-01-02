@@ -14,10 +14,6 @@
                         <label for="IdTarjetaOrigen" class="text-light">Numero de la tarjeta origen</label>
                         <input type="text" name="IdTarjetaOrigen" value="" placeholder="">
                     </div>
-                    <div class="form-group">
-                        <label for="IdTarjetaDestino" class="text-light">Numero de la tarjeta destino</label>
-                        <input type="text" name="IdTarjetaDestino" value="" placeholder="">
-                    </div>
                     <div class="form-group" style="display: inline-flex;">
                         <div>
                             <label for="cvv" class="text-light">Código de seguridad</label>
@@ -25,28 +21,37 @@
                         </div>
                         <div style="margin-left: 15%;">
                             <label for="TipoTransaccion" class="text-light">Tipo Transacción</label>
-                            <input type="text" name="TipoTransaccion" value="3" placeholder="3">
+                            <input type="text" name="TipoTransaccion" value="3" placeholder="3" disabled>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="Motivo" class="text-light">Motivo</label>
-                        <input type="text" name="Motivo" value="Servicio veterinario" placeholder="Servicio veterinario">
+                        <input type="text" name="Motivo" value="Servicio veterinario" placeholder="Servicio veterinario" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Fecha" class="text-light">Fecha</label>
                         <input type="date" name="Fecha" value="2021-12-13" min="2021-12-12" max="2023-12-31" >
                     
                     <div class="form-group" id="servicestb">
-                        <input type="checkbox" value="400" id="serv1">
-                        <label class="text-light" for="serv1">Servicio 1 - $400</label>
+                        <label class="text-light" for="serv1">Consulta - $300</label><br>
+                        <input type="checkbox" value="1200" id="serv1">
+                        <label class="text-light" for="serv1">Vacunación y desparasitación - $1200</label>
                         <br>
-                        <input type="checkbox" value="2000" id="serv2">
-                        <label class="text-light" for="serv2">Servicio 2 - $2000</label>
+                        <input type="checkbox" value="3000" id="serv2">
+                        <label class="text-light" for="serv2">Cirugia - $3000</label>
                         <br>
-                        <input type="checkbox" value="1500" id="serv3">
-                        <label class="text-light" for="serv2">Servicio 3 - $1500</label>
+                        <input type="checkbox" value="800" id="serv3">
+                        <label class="text-light" for="serv2">Diagnostico por Ultrasonido - $800</label>
+                        <br>
+                        <input type="checkbox" value="500" id="serv4">
+                        <label class="text-light" for="serv2">Hospitalización - $500</label>
+                        <br>
+                        <input type="checkbox" value="300" id="serv5">
+                        <label class="text-light" for="serv2">Toma de muestras para analisis clinicos - $300</label>
+                        <br>
+                        <input type="checkbox" value="1000" id="serv6">
+                        <label class="text-light" for="serv2">Esterilizaciones - $1000</label>
                     </div>
-                    
                     
                     <div class="form-group" style="width: 25%; margin: auto; ">
                         <label for="costo" class="text-light" style="font-size: 2.5em; margin-left: 22%">Monto</label>
