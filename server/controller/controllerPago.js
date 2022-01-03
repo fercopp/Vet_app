@@ -76,25 +76,24 @@ exports.create = (req,res)=>{
         })
         .then(data => {
 
-            res.status(200).send({
-                message: "Transacción Aceptada - BanCoppel"
-            });
-
-            /*
-            const consulta = new Consultadb({
-                EdoTransaccion: data.data.status,
-                idTransaccion: data.data.transaction_num,
-                Monto: data.data.ammount,
-                Fecha: data.data.date
+            
+            const consultaBancoppel = new Consultadb({
+                EdoTransaccion: data.data.EstadoTrans,
+                idTransaccion: data.data.IdTransaccion,
+                Monto: data.data.Monto,
+                Fecha: data.data.Fecha,
+                terminacionTj: req.body.IdTarjetaOrigen.slice(-4)
             })
 
             // save consulta in the database
-            consulta
-                .save(consulta)
+            consultaBancoppel
+                .save(consultaBancoppel)
                 .then(data =>{
-
+                    res.status(200).send({
+                        message: "Transacción Aceptada - BanCoppel"
+                    });
                     
-                })*/
+                })
                 
         })
         .catch(error =>{

@@ -68,6 +68,13 @@ a{
     -webkit-text-fill-color: transparent;
 }
 
+.text-green{
+    background: linear-gradient(to right, #16db93, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #header nav{
     background-color: #2b2d42;
     padding: 1em 0;
