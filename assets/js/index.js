@@ -65,6 +65,9 @@ function getSelectValue(){
     var selectedValue = document.getElementById("bancos").value;
 }
 
+$("#add_cita").submit(function(event){
+    alert("Los datos fueron guardados con éxito")
+})
 
 /*$("#add_pago").submit(function(event){
     alert("Transacción solicitada")

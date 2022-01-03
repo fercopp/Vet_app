@@ -22,31 +22,31 @@
                     <div class="form-group">
                         <label for="name" class="text-light">Nombre cliente</label>
                         <input type="hidden" name="id" value="<%= cita._id %>">
-                        <input type="text" name="name" value="<%= cita.name %>">
+                        <input type="text" name="name" value="<%= cita.name %>" required>
                     </div>
                     <div class="form-group">
                         <label for="nombreMascota" class="text-light">Nombre de la mascota</label>
-                        <input type="text" name="nombreMascota" value="<%= cita.nombreMascota %>">
+                        <input type="text" name="nombreMascota" value="<%= cita.nombreMascota %>" required>
                     </div>
                     <div class="form-group">
                         <label for="raza" class="text-light">Raza/Especie</label>
-                        <input type="text" name="raza" value="<%= cita.raza %>">
+                        <input type="text" name="raza" value="<%= cita.raza %>" required>
                     </div>
                     <div class="form-group">
                         <label for="edad" class="text-light">Edad de la mascota</label>
-                        <input type="text" name="edad" value="<%= cita.edad %>">
+                        <input type="text" name="edad" value="<%= cita.edad %>" required>
                     </div>
                     <div class="form-group">
                         <label for="direccion" class="text-light">Dirección</label>
-                        <input type="text" name="direccion" value="<%= cita.direccion %>">
+                        <input type="text" name="direccion" value="<%= cita.direccion %>" required>
                     </div>
                     <div class="form-group">
                         <label for="telefono" class="text-light">Numero de Teléfono</label>
-                        <input type="text" name="telefono" value="<%= cita.telefono %>">
+                        <input type="text" name="telefono" value="<%= cita.telefono %>" required>
                     </div>
                     <div class="form-group">
                         <label for="area" class="text-light">Area</label>
-                        <input type="text" name="area" value="<%= cita.area %>">
+                        <input type="text" name="area" value="<%= cita.area %>" disabled required>
                     </div>
                     <div class="form-group">
                         <label for="fecha" class="text-light">Dia de la cita</label>
@@ -56,7 +56,7 @@
                     </div>             
                     <div class="form-group">
                         <label for="email" class="text-light">Email</label>
-                        <input type="text" name="email" value="<%= cita.email %>">
+                        <input type="text" name="email" value="<%= cita.email %>" required>
                     </div>
                 
                     <!---->
