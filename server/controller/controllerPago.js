@@ -62,16 +62,13 @@ exports.create = (req,res)=>{
         })
     }else{
         console.log("bancoppel");
-        res.send({
-            message: "No está la conexión con Bancoppel"
-        })
-        /*
+
         //JSON solicitud transaccion banco irvin BanCoppel
         axios 
-        .post('https://api-bancoppel-transferencia.herokuapp.com/', {
+        .post('https://api-bancoppel-transferencia.herokuapp.com/transacciones', {
             IdTarjetaOrigen: req.body.IdTarjetaOrigen,
             IdTarjetaDestino: "5527895529754521",
-            ccv: req.body.cvv,
+            Cvv: req.body.cvv,
             TipoTransaccion: "3",
             Motivo: "Servicio Veterinario",
             Monto: req.body.Monto,
@@ -83,9 +80,7 @@ exports.create = (req,res)=>{
                 message: "Transacción Aceptada - BanCoppel"
             });
 
-            console.log(`statusCode: ${res.status}`);
-
-            
+            /*
             const consulta = new Consultadb({
                 EdoTransaccion: data.data.status,
                 idTransaccion: data.data.transaction_num,
@@ -99,7 +94,7 @@ exports.create = (req,res)=>{
                 .then(data =>{
 
                     
-                })
+                })*/
                 
         })
         .catch(error =>{
@@ -108,7 +103,7 @@ exports.create = (req,res)=>{
             });
             console.error(error);
         })
-        */
+        
     }
   
 }
