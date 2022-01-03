@@ -61,7 +61,10 @@ exports.create = (req,res)=>{
             console.log(error.response.data);
         })
     }else{
-        console.log("bancoppel")
+        console.log("bancoppel");
+        res.send({
+            message: "No está la conexión con Bancoppel"
+        })
         /*
         //JSON solicitud transaccion banco irvin BanCoppel
         axios 
