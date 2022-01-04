@@ -12,13 +12,13 @@ exports.create = (req,res)=>{
     }
 
     axios.post('https://api-proceso-transporte.herokuapp.com/api/users', {
-        areaVeterinaria: "Veterinaria",
-        servicio: "Recoleccion",
-        nomCliente: "Recoleccion",
-        direccion: "Recoleccion",
-        telefono: "Recoleccion",
-        fecha: "Recoleccion",
-        hora: "Recoleccion"
+        "areaVeterinaria": "Veterinaria",
+        "servicio": "Recoleccion",
+        "nomCliente": "Recoleccion",
+        "direccion": "Recoleccion",
+        "telefono": "Recoleccion",
+        "fecha": "Recoleccion",
+        "hora": "Recoleccion"
     })
     .then(data=>{
         //new cita.
@@ -60,9 +60,6 @@ exports.create = (req,res)=>{
     })
     
     
-
-
-
     //new cliente
     const cliente = new Clientedb({
         name: req.body.name,
