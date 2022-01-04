@@ -3,7 +3,7 @@ var qs = require('qs');
 var {Agendadb} = require('../model/model');
 
 
-// create and save new citas
+// create and save new cita
 exports.create = (req,res)=>{
     // validate request
     if(!req.body){
