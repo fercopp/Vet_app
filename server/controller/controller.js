@@ -35,6 +35,17 @@ exports.create = (req,res)=>{
         .save(cita)
         .then(data =>{
             //res.send(data)
+            if(req.body.servicio == "Recoleccion"){
+                axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
+                "areaVeterinaria": req.body.area,
+                "servicio": req.body.servicio,
+                "nomCliente": req.body.name,
+                "direccion": req.body.direccion,
+                "telefono": req.body.telefono,
+                "fecha": req.body.fecha,
+                "hora": req.body.hora,
+            })
+            }
             res.redirect('/add-cita')
         })
         .catch(err =>{
@@ -104,39 +115,7 @@ exports.create = (req,res)=>{
                 message: err.message || "Some error ocurred while creating a create operation"
             });
         });
-
-    MongoClient.connect(process.env.MONGO_URL, function(err, db) {
-    if (err) throw err;    
-    var dbo = db.db("SisVet");
-    var query = { servicio: "Recoleccion" };
-    dbo.collection("agendadb").find(query).toArray(function(err, result) {
-        if (err) throw err;
-        console.log(result);
-      });
-    });
-    /*
-    //Conexion con Transporte Post
-    axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
-        "areaVeterinaria": req.body.area,
-        "servicio": req.body.servicio,
-        "nomCliente": req.body.name,
-        "direccion": req.body.direccion,
-        "telefono": req.body.telefono,
-        "fecha": req.body.fecha,
-        "hora": req.body.hora,
-    })
-
-    .then(data => {
-
-        
-    })
-    .catch(error =>{
-        res.status(500).send({
-            message: error.message || "Some error ocurred while creating a create operation"
-        });
-        console.error(error);
-        console.log(error.response.data);
-    })*/
+    
         
 }
 
