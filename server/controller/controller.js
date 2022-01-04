@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+var qs = require('qs');
 var {Agendadb} = require('../model/model');
 
 
@@ -11,7 +11,7 @@ exports.create = (req,res)=>{
         return;
     }
 
-    axios.post('https://api-proceso-transporte.herokuapp.com/api/users', {
+    axios.post('https://api-proceso-transporte.herokuapp.com/api/users', qs.stringify({
         areaVeterinaria: req.body.area,
         servicio: req.body.servicio,
         nomCliente: req.body.name,
@@ -19,6 +19,10 @@ exports.create = (req,res)=>{
         telefono: req.body.telefono,
         fecha: req.body.fecha,
         hora: req.body.horaRecoleccion
+    }), {
+        headers: { 
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
     })
     .then(data=>{
         //new cita.
@@ -58,7 +62,8 @@ exports.create = (req,res)=>{
         console.error(error);
         console.log(error.response.data);
     })
-    
+    var querystring = require('querystring');
+
     /*
     //new cliente
     const cliente = new Clientedb({
@@ -122,6 +127,7 @@ exports.create = (req,res)=>{
     */
         
 }
+
 
 // retrieve and return all citas/ retrieve and return a single cita
 exports.find = (req, res)=>{
