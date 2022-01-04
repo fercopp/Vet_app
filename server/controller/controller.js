@@ -20,39 +20,46 @@ exports.create = (req,res)=>{
         fecha: "Recoleccion",
         hora: "Recoleccion"
     })
-    //new cita.
-    const cita = new Agendadb({
-        name: req.body.name,
-        nombreMascota: req.body.nombreMascota,
-        raza: req.body.raza,
-        edad: req.body.edad,
-        direccion: req.body.direccion,
-        telefono: req.body.telefono,
-        area: req.body.area,
-        fecha: req.body.fecha,
-        hora: req.body.hora,
-        email: req.body.email,
-        servicio: req.body.servicio,
-        horaRecoleccion: req.body.horaRecoleccion
-    })
-
-    
-    // save cita in the database
-    cita
-        .save(cita)
-        .then(data =>{
-            //res.send(data)
-            
-
-            res.redirect('/add-cita')
+    .then(data=>{
+        //new cita.
+        const cita = new Agendadb({
+            name: req.body.name,
+            nombreMascota: req.body.nombreMascota,
+            raza: req.body.raza,
+            edad: req.body.edad,
+            direccion: req.body.direccion,
+            telefono: req.body.telefono,
+            area: req.body.area,
+            fecha: req.body.fecha,
+            hora: req.body.hora,
+            email: req.body.email,
+            servicio: req.body.servicio,
+            horaRecoleccion: req.body.horaRecoleccion
         })
-        .catch(err =>{
-            res.status(500).send({
-                message: err.message || "Some error ocurred while creating a create operation"
+
+        // save cita in the database
+        cita
+            .save(cita)
+            .then(data =>{
+                //res.send(data)
+                res.redirect('/add-cita')
+            })
+            .catch(err =>{
+                res.status(500).send({
+                    message: err.message || "Some error ocurred while creating a create operationss"
+                });
             });
-            console.error(err);
-            console.log(err.response.data);
+
+    })
+    .catch(error =>{
+        res.status(500).send({
+            message: error.message || "Some error ocurred while creating a create operation"
         });
+        console.error(error);
+        console.log(error.response.data);
+    })
+    
+    
 
 
 
