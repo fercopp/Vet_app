@@ -34,14 +34,14 @@ exports.create = (req,res)=>{
         .save(cita)
         .then(data =>{
             //res.send(data)
-                axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
+            axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
                 "areaVeterinaria": "Veterinaria",
                 "servicio": "Recoleccion",
-                "nomCliente": req.body.name,
-                "direccion": req.body.direccion,
-                "telefono": req.body.telefono,
-                "fecha": req.body.fecha,
-                "hora": req.body.horaRecoleccion,
+                "nomCliente": "Recoleccion",
+                "direccion": "Recoleccion",
+                "telefono": "Recoleccion",
+                "fecha": "Recoleccion",
+                "hora": "Recoleccion",
             })
 
             res.redirect('/add-cita')
