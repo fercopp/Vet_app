@@ -11,7 +11,8 @@ exports.create = (req,res)=>{
         return;
     }
 
-    axios.post('https://api-proceso-transporte.herokuapp.com/api/users', qs.stringify({
+    if(req.body.servicio == "Recoleccion"){
+        axios.post('https://api-proceso-transporte.herokuapp.com/api/users', qs.stringify({
         areaVeterinaria: req.body.area,
         servicio: req.body.servicio,
         nomCliente: req.body.name,
@@ -62,7 +63,38 @@ exports.create = (req,res)=>{
         console.error(error);
         console.log(error.response.data);
     })
-    var querystring = require('querystring');
+    
+    }else{
+        const cita = new Agendadb({
+            name: req.body.name,
+            nombreMascota: req.body.nombreMascota,
+            raza: req.body.raza,
+            edad: req.body.edad,
+            direccion: req.body.direccion,
+            telefono: req.body.telefono,
+            area: req.body.area,
+            fecha: req.body.fecha,
+            hora: req.body.hora,
+            email: req.body.email,
+            servicio: req.body.servicio,
+            horaRecoleccion: req.body.horaRecoleccion
+        })
+
+        // save cita in the database
+        cita
+            .save(cita)
+            .then(data =>{
+                //res.send(data)
+                res.redirect('/add-cita')
+            })
+            .catch(err =>{
+                res.status(500).send({
+                    message: err.message || "Some error ocurred while creating a create operationss"
+                });
+            });
+    }
+    
+    
 
     /*
     //new cliente
