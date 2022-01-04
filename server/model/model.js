@@ -35,7 +35,8 @@ var schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    servicio: String
+    servicio: String,
+    horaRecoleccion: String
 })
 
 

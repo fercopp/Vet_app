@@ -25,7 +25,8 @@ exports.create = (req,res)=>{
         fecha: req.body.fecha,
         hora: req.body.hora,
         email: req.body.email,
-        servicio: req.body.servicio
+        servicio: req.body.servicio,
+        horaRecoleccion: req.body.horaRecoleccion
     })
 
     
@@ -43,7 +44,7 @@ exports.create = (req,res)=>{
                 "direccion": req.body.direccion,
                 "telefono": req.body.telefono,
                 "fecha": req.body.fecha,
-                "hora": req.body.hora,
+                "hora": req.body.horaRecoleccion,
             })
             }
             res.redirect('/add-cita')
