@@ -11,7 +11,7 @@ exports.create = (req,res)=>{
         return;
     }
 
-    axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
+    axios.post('https://api-proceso-transporte.herokuapp.com/api/users', {
         areaVeterinaria: "Veterinaria",
         servicio: "Recoleccion",
         nomCliente: "Recoleccion",
