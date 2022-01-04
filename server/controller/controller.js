@@ -11,6 +11,15 @@ exports.create = (req,res)=>{
         return;
     }
 
+    axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
+        areaVeterinaria: "Veterinaria",
+        servicio: "Recoleccion",
+        nomCliente: "Recoleccion",
+        direccion: "Recoleccion",
+        telefono: "Recoleccion",
+        fecha: "Recoleccion",
+        hora: "Recoleccion"
+    })
     //new cita.
     const cita = new Agendadb({
         name: req.body.name,
@@ -28,21 +37,12 @@ exports.create = (req,res)=>{
     })
 
     
-
     // save cita in the database
     cita
         .save(cita)
         .then(data =>{
             //res.send(data)
-            axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
-                areaVeterinaria: "Veterinaria",
-                servicio: "Recoleccion",
-                nomCliente: "Recoleccion",
-                direccion: "Recoleccion",
-                telefono: "Recoleccion",
-                fecha: "Recoleccion",
-                hora: "Recoleccion",
-            })
+            
 
             res.redirect('/add-cita')
         })
