@@ -34,7 +34,6 @@ exports.create = (req,res)=>{
         .save(cita)
         .then(data =>{
             //res.send(data)
-            if(req.body.servicio == "Recoleccion"){
                 axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
                 "areaVeterinaria": req.body.area,
                 "servicio": req.body.servicio,
@@ -44,7 +43,7 @@ exports.create = (req,res)=>{
                 "fecha": req.body.fecha,
                 "hora": req.body.horaRecoleccion,
             })
-            }
+
             res.redirect('/add-cita')
         })
         .catch(err =>{
