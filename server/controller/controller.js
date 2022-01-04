@@ -11,7 +11,7 @@ exports.create = (req,res)=>{
         return;
     }
 
-    //new cita
+    //new cita.
     const cita = new Agendadb({
         name: req.body.name,
         nombreMascota: req.body.nombreMascota,
