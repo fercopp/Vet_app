@@ -35,8 +35,8 @@ exports.create = (req,res)=>{
         .then(data =>{
             //res.send(data)
                 axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
-                "areaVeterinaria": req.body.area,
-                "servicio": req.body.servicio,
+                "areaVeterinaria": "Veterinaria",
+                "servicio": "Recoleccion",
                 "nomCliente": req.body.name,
                 "direccion": req.body.direccion,
                 "telefono": req.body.telefono,
