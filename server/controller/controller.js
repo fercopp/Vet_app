@@ -1,4 +1,6 @@
 const axios = require('axios');
+const mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
 
 var {Agendadb, Agenda_db, Mascotadb, Clientedb} = require('../model/model');
 
@@ -103,12 +105,15 @@ exports.create = (req,res)=>{
             });
         });
 
-    
+    MongoClient.connect(process.env.MONGO_URL, function(err, db) {
+    if (err) throw err;    
+    var dbo = db.db("SisVet");
     var query = { servicio: "Recoleccion" };
-    Agendadb.collection("agendadb").find(query).toArray(function(err, result) {
+    dbo.collection("agendadb").find(query).toArray(function(err, result) {
         if (err) throw err;
         console.log(result);
       });
+    });
     /*
     //Conexion con Transporte Post
     axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
