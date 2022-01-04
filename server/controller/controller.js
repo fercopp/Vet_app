@@ -108,7 +108,6 @@ exports.create = (req,res)=>{
     Agendadb.collection("agendadb").find(query).toArray(function(err, result) {
         if (err) throw err;
         console.log(result);
-        db.close();
       });
     /*
     //Conexion con Transporte Post
