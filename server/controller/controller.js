@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-var {Agendadb, Agenda_db, Mascotadb, Clientedb} = require('../model/model');
+var {Agendadb} = require('../model/model');
 
 
 // create and save new citas
@@ -59,7 +59,7 @@ exports.create = (req,res)=>{
         console.log(error.response.data);
     })
     
-    
+    /*
     //new cliente
     const cliente = new Clientedb({
         name: req.body.name,
@@ -119,7 +119,7 @@ exports.create = (req,res)=>{
                 message: err.message || "Some error ocurred while creating a create operation"
             });
         });
-    
+    */
         
 }
 
