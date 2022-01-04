@@ -1,6 +1,4 @@
 const axios = require('axios');
-const mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
 
 var {Agendadb, Agenda_db, Mascotadb, Clientedb} = require('../model/model');
 
@@ -53,6 +51,8 @@ exports.create = (req,res)=>{
             res.status(500).send({
                 message: err.message || "Some error ocurred while creating a create operation"
             });
+            console.error(error);
+            console.log(error.response.data);
         });
 
 
