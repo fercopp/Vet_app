@@ -2,38 +2,30 @@ const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     nombreMascota: {
-        type: String,
-        required: true
+        type: String
     },
     raza: {
-        type: String,
-        required: true
+        type: String
     },
     edad: {
-        type: String,
-        required: true
+        type: String
     },
     direccion: {
-        type: String,
-        required: true
+        type: String
     },
     telefono: {
-        type: String,
-        required: true
+        type: String
     },
     area: {
-        type: String,
-        required: true
+        type: String
     },
     fecha: String,
     hora: String,
     email: {
-        type: String,
-        required: true
+        type: String
     },
     servicio: String,
     horaRecoleccion: String
@@ -121,9 +113,9 @@ const Agendadb = mongoose.model('agendadb', schema);
 const Consultadb = mongoose.model('consultadb', schemaConsulta);
 const Recetadb = mongoose.model('recetadb', schemaReceta);
 
-const Mascotadb = mongoose.model('mascotadb', schemaMascota);
-const Clientedb = mongoose.model('clientedb', schemaCliente);
-const Agenda_db = mongoose.model('agenda_db', schemaAgenda);
+//const Mascotadb = mongoose.model('mascotadb', schemaMascota);
+//const Clientedb = mongoose.model('clientedb', schemaCliente);
+//const Agenda_db = mongoose.model('agenda_db', schemaAgenda);
 
-module.exports = {Agendadb, Consultadb, Recetadb, Mascotadb, Clientedb, Agenda_db}
+module.exports = {Agendadb, Consultadb, Recetadb}
 
