@@ -3,7 +3,7 @@ const axios = require('axios');
 var {Agendadb, Agenda_db, Mascotadb, Clientedb} = require('../model/model');
 
 
-// create and save new cita
+// create and save new citas
 exports.create = (req,res)=>{
     // validate request
     if(!req.body){
