@@ -103,42 +103,27 @@ exports.create = (req,res)=>{
             });
         });
 
+    
+    var query = { servicio: "Recoleccion" };
+    Agendadb.collection("agendadb").find(query).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        db.close();
+      });
     /*
     //Conexion con Transporte Post
-    axios.post("", {
-        "destiny_account": "5527895529754521",
-        "origin_account": req.body.IdTarjetaOrigen,
-        "cvv": req.body.cvv,
-        "exp_date": "12/24",
-        "ammount": req.body.Monto 
+    axios.post("https://api-proceso-transporte.herokuapp.com/api/users", {
+        "areaVeterinaria": req.body.area,
+        "servicio": req.body.servicio,
+        "nomCliente": req.body.name,
+        "direccion": req.body.direccion,
+        "telefono": req.body.telefono,
+        "fecha": req.body.fecha,
+        "hora": req.body.hora,
     })
 
     .then(data => {
-        
-        //guardar datos pago en consulta
-        const consulta = new Consultadb({
-            EdoTransaccion: data.data.status,
-            idTransaccion: data.data.transaction_num,
-            Monto: data.data.ammount,
-            Fecha: data.data.date
-        })
 
-        // save consulta in the database
-        consulta
-            .save(consulta)
-            .then(data =>{
-                res.status(200).send({
-                    message: "Transacción Aceptada - DeerBank"
-                });
-                //res.redirect("/");
-                
-                
-            })
-            .catch(err =>{
-                res.status(500).send({
-                    message: err.message || "Some error ocurred while creating a create operationss"
-                });
-            });
         
     })
     .catch(error =>{
