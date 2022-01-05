@@ -1,6 +1,6 @@
 const axios = require('axios');
 var qs = require('qs');
-var {Agendadb} = require('../model/model');
+var {Agendadb, Clientedb, Mascotadb, Agenda_db} = require('../model/model');
 
 
 // create and save new cita
