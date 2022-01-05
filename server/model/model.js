@@ -67,42 +67,34 @@ var schemaReceta = new mongoose.Schema({
 
 var schemaMascota = new mongoose.Schema({
     nombreMascota: {
-        type: String,
-        required: true
+        type: String
     },
     raza: {
-        type: String,
-        required: true
+        type: String
     },
     edad: {
-        type: String,
-        required: true
+        type: String
     }
 })
 
 var schemaCliente = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     direccion: {
-        type: String,
-        required: true
+        type: String
     },
     telefono: {
-        type: String,
-        required: true
+        type: String
     },
     email: {
-        type: String,
-        required: true
+        type: String
     },
 })
 
 var schemaAgenda = new mongoose.Schema({
     area: {
-        type: String,
-        required: true
+        type: String
     },
     fecha: String,
     hora: String,
