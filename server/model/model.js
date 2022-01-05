@@ -113,9 +113,9 @@ const Agendadb = mongoose.model('agendadb', schema);
 const Consultadb = mongoose.model('consultadb', schemaConsulta);
 const Recetadb = mongoose.model('recetadb', schemaReceta);
 
-//const Mascotadb = mongoose.model('mascotadb', schemaMascota);
-//const Clientedb = mongoose.model('clientedb', schemaCliente);
-//const Agenda_db = mongoose.model('agenda_db', schemaAgenda);
+const Mascotadb = mongoose.model('mascotadb', schemaMascota);
+const Clientedb = mongoose.model('clientedb', schemaCliente);
+const Agenda_db = mongoose.model('agenda_db', schemaAgenda);
 
-module.exports = {Agendadb, Consultadb, Recetadb}
+module.exports = {Agendadb, Consultadb, Recetadb, Mascotadb, Clientedb, Agenda_db}
 

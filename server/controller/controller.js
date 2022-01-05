@@ -96,7 +96,7 @@ exports.create = (req,res)=>{
     
     
 
-    /*
+    
     //new cliente
     const cliente = new Clientedb({
         name: req.body.name,
@@ -156,7 +156,7 @@ exports.create = (req,res)=>{
                 message: err.message || "Some error ocurred while creating a create operation"
             });
         });
-    */
+    
         
 }
 
