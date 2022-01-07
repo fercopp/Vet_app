@@ -39,7 +39,9 @@ exports.create = (req,res)=>{
             hora: req.body.hora,
             email: req.body.email,
             servicio: req.body.servicio,
-            horaRecoleccion: req.body.horaRecoleccion
+            horaRecoleccion: req.body.horaRecoleccion,
+            idTpte: data.data.id,
+            estadoTpte: data.data.estado
         })
 
         // save cita in the database

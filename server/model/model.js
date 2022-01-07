@@ -28,7 +28,13 @@ var schema = new mongoose.Schema({
         type: String
     },
     servicio: String,
-    horaRecoleccion: String
+    horaRecoleccion: String,
+    idTpte: {
+        type: String
+    },
+    estadoTpte: {
+        type: String
+    }
 })
 
 
