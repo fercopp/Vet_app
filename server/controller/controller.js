@@ -43,6 +43,7 @@ exports.create = (req,res)=>{
             idTpte: data.data.id,
             estadoTpte: data.data.estado
         })
+        console.log(data.data);
 
         // save cita in the database
         cita
@@ -191,13 +192,6 @@ exports.find = (req, res)=>{
         })
     }
 
-    /*Agendadb.find()
-    .then(cita =>{
-        res.send(cita)
-    })
-    .catch(err=>{
-        res.status(500).send({message: err.message || "Error ocurred while retrieving user information"})
-    })*/
 }
 
 

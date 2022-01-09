@@ -34,6 +34,7 @@ exports.create = (req,res)=>{
                 Fecha: data.data.date,
                 terminacionTj: req.body.IdTarjetaOrigen.slice(-4)
             })
+            
 
             // save consulta in the database
             consulta
@@ -61,7 +62,6 @@ exports.create = (req,res)=>{
             console.log(error.response.data);
         })
     }else{
-        console.log("bancoppel");
 
         //JSON solicitud transaccion banco irvin BanCoppel
         axios 
@@ -84,7 +84,6 @@ exports.create = (req,res)=>{
                 Fecha: data.data.Fecha,
                 terminacionTj: req.body.IdTarjetaOrigen.slice(-4)
             })
-
             // save consulta in the database
             consultaBancoppel
                 .save(consultaBancoppel)
