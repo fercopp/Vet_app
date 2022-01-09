@@ -67,7 +67,7 @@ exports.create = (req,res)=>{
         axios 
         .post('https://api-bancoppel-transferencia.herokuapp.com/transacciones', {
             IdTarjetaOrigen: req.body.IdTarjetaOrigen,
-            IdTarjetaDestino: "5527895529754521",
+            IdTarjetaDestino: "5579100251520002",
             Cvv: req.body.cvv,
             TipoTransaccion: "3",
             Motivo: "Servicio Veterinario",
